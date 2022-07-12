@@ -2,15 +2,10 @@
 pragma solidity 0.8.15;
 
 contract Voting {
-    enum VoteBlockType {
-        UpVote,
-        DownVote
-    }
-
     struct VoteBlock {
         uint256 id;
         uint256 createdAt;
-        VoteBlockType blockType;
+        int32 vote;
         address agent;
     }
 
@@ -64,7 +59,9 @@ contract Voting {
     }
 
     /// vote for a decision
-    function vote(uint256 _decisionID, VoteBlockType _blockType) public OnlyAgents returns (uint256) {
+    function vote(uint256 _decisionID, int32 vote_) public OnlyAgents returns (uint256) {
+        require(vote_ >= -100 && vote_ <= 100, "Vote must be between -100 and 100");
+
         Decision storage decision = decisions[_decisionID];
         // abort if decision does not exist
         require(bytes(decision.context).length != 0, "Decision does not exist");
@@ -80,7 +77,7 @@ contract Voting {
         VoteBlock memory newVote = VoteBlock({
             id: voteID,
             createdAt: block.timestamp,
-            blockType: _blockType,
+            vote: vote_,
             agent: msg.sender
         });
         decision.votes.push(newVote);
@@ -117,26 +114,6 @@ contract Voting {
         decision.feedbacks.push(newFeedback);
 
         return feedbackID;
-    }
-
-    /// get decision rank
-    function getDecisionRank(uint256 _decisionID) public view returns (int256) {
-        Decision memory decision = decisions[_decisionID];
-        // abort if decision does not exist
-        require(bytes(decision.context).length != 0, "Decision does not exist");
-
-        // up vote - down vote
-        int256 upVote = 0;
-        int256 downVote = 0;
-        for (uint256 i = 0; i < decision.votes.length; i++) {
-            if (decision.votes[i].blockType == VoteBlockType.UpVote) {
-                upVote++;
-            } else {
-                downVote++;
-            }
-        }
-
-        return upVote - downVote;
     }
 
     /// register an agent
