@@ -3,15 +3,14 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Blockchain-fuzzy-voting</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Blockchain fuzzy voting</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet"> 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap');
-</style> 
-
+</style>
 
 <style type="text/css">
     pre { line-height: 125%; }
@@ -14605,12 +14604,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h1 style="font-size: 28px; font-weight: 700">پیاده‌سازی سیستم تصمیم‌گیری غیرمتمرکز مبتنی بر بلاکچین</h1>
+<h1 style="font-size: 28px !important; font-weight: 700">پیاده‌سازی سیستم تصمیم‌گیری غیرمتمرکز مبتنی بر بلاکچین</h1>
 
 <table style='border: none; text-align: right !important; float:right; display:block' dir='rtl'>
 <tr style='border: none; text-align: right !important;'>
-<td style='border: none; font-size: 20px; text-align: right !important; font-weight: 700'>امیرحسین بانوی</td>
-<td style='border: none; font-size: 15px; text-align: right !important; font-weight: 600'>دانشجوی کارشناسی ارشد،نرم‌افزار،کامپیوتر،دانشکده مهندسی،دانشگاه آزاد اسلامی،مشهد،ایران</td>
+<td style='border: none; font-size: 20px !important; text-align: right !important; font-weight: 700'>امیرحسین بانوی</td>
+<td style='border: none; font-size: 15px !important; text-align: right !important; font-weight: 600'>دانشجوی کارشناسی ارشد،نرم‌افزار،کامپیوتر،دانشکده مهندسی،دانشگاه آزاد اسلامی،مشهد،ایران</td>
 </tr>
 </table>
 </div>
@@ -14625,8 +14624,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h2 style="font-size: 24px; font-weight: 700">چکیده</h2>
-<p style="font-size: 18px; text-align: right; font-weight: 400; text-justify: auto">
+<h2 style="font-size: 24px !important; font-weight: 700">چکیده</h2>
+<p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 دنیای امروز همواره دارد به سمت یک محیط به هم پیوسته مهاجرت می‌کند و در این دنیا، نیاز به سیستم‌های توزیع شده بسیار مهم شده است. اکثر سیستم‌های توزیع شده به دلیل اینکه برای تصمیم‌گیری متکی به یک سیستم مرکزی هستند دارای مشکلاتی همچون single point of failure می‌باشند. همچنین کمبود امنیت اطلاعات و شفاف نبودن فرایند تصمیم‌گیری در این سیستم‌های مدیریتی متمرکز باعث شده است رویکرد‌های تصمیم‌گیری توزیع شده و غیرمتمرکز بر روی بلاکچین مورد استفاده قرار گیرند. در این پیاده‌سازی سعی شده است یک قرارداد هوشمند رای‌گیری بر روی بلاکچین اتریوم نوشته شده و در فرایند اولویت دهی تصمیمات از منطق فازی برای پوشش عدم قطعیت‌ها استفاده گردد.
 </p>
 </div>
@@ -14641,8 +14640,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h2 style="font-size: 24px; font-weight: 700">مقدمه</h2>
-<p style="font-size: 18px; text-align: right; font-weight: 400; text-justify: auto">
+<h2 style="font-size: 24px !important; font-weight: 700">مقدمه</h2>
+<p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 این پیاده سازی به دو بخش کلی تقسیم می‌گردد: <br />
 بخش اول: ابتدا باید قرارداد هوشمند رای گیری نوشته شود، برای نوشتن قرار داد هوشمند از زبان <a href="https://docs.soliditylang.org/en/v0.8.15/">Solidity</a> نسخه‌ی 0.8.15 استفاده شده است. <br />
 بخش دوم: در این بخش برای پیاده‌سازی منطق فازی از زبان پایتون استفاده شده است. در اینجا با استفاده از کتابخانه‌ی <a href="https://pythonhosted.org/scikit-fuzzy/">SciKit-Fuzzy</a> یک موتور استنتاج ممدانی نوشته شده و بر اساس آن تصمیمات اولویت بندی می‌گردند. <br />
@@ -14660,22 +14659,22 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h2 style="font-size: 24px; font-weight: 700">پیاده‌سازی</h2>
+<h2 style="font-size: 24px !important; font-weight: 700">پیاده‌سازی</h2>
 </div>
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h3 style="font-size: 22px; font-weight: 600">قرارداد هوشمند</h3>
-<p style="font-size: 18px; text-align: right; font-weight: 400; text-justify: auto">
+<h3 style="font-size: 22px !important; font-weight: 600">قرارداد هوشمند</h3>
+<p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 قرارداد هوشمند سیستم رای‌گیری بر اساس بلاک‌های معرفی شده در مقاله‌ی پایه پیاده‌سازی شده است:<br />
 <center><a href="https://raw.githubusercontent.com/ahbanavi/blockchain-fuzzy-voting/main/src/storage/1.png"><img style="object-fit: cover; height: 400px;" src='https://raw.githubusercontent.com/ahbanavi/blockchain-fuzzy-voting/main/src/storage/1.png' /></a></center><br />
 </p>
-<p style="font-size: 18px; text-align: right; font-weight: 400; text-justify: auto">
+<p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 قرارداد هوشمند به زبان سالیدیتی نوشته شده و در فایل <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/main/src/Voting.sol">Voting.sol</a> ذخیره شده است.<br />
 به دلیل اینکه توجه اصلی این پیاده‌سازی بر روی سیستم فازی است، از توضیح جزئیات پیاده‌سازی این قرارداد چشم پوشی شده است، اما به طور کلی این قرارداد شامل ویژگی‌های زیر می‌باشد:
 </p>
 
-<span style="font-size: 18px; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
+<span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
 <ul>
-<li><p style="font-size: 18px; text-align: right !important; font-weight: 400; text-justify: auto">بلاک رای یا <code>VoteBlock</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L5-L10">ارجا به کد</a></p>
+<li><p style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto">بلاک رای یا <code>VoteBlock</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L5-L10">ارجا به کد</a></p>
 <ul>
 <li>شناسه‌ی رای</li>
 <li>زمان ایجاد رای</li>
@@ -14684,7 +14683,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </ul>
 </li>
 <br />
-<li><p style="font-size: 18px; text-align: right !important; font-weight: 400; text-justify: auto">بلاک بازخورد یا <code>FeedbackBlock</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L12-L17">ارجا به کد</a></p>
+<li><p style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto">بلاک بازخورد یا <code>FeedbackBlock</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L12-L17">ارجا به کد</a></p>
 <ul>
 <li>شناسه‌ی بازخورد</li>
 <li>زمان ایجاد بازخورد</li>
@@ -14693,7 +14692,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </ul>
 </li>
 <br />
-<li><p style="font-size: 18px; text-align: right !important; font-weight: 400; text-justify: auto">بلاک تصمیم یا <code>Decision</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L19-L25">ارجا به کد</a></p>
+<li><p style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto">بلاک تصمیم یا <code>Decision</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L19-L25">ارجا به کد</a></p>
 <ul>
 <li>شناسه‌ی تصمیم</li>
 <li>زمان ایجاد تصمیم</li>
@@ -14704,7 +14703,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </ul>
 </li>
 <br />
-<li><p style="font-size: 18px; text-align: right !important; font-weight: 400; text-justify: auto">بلاک عامل یا <code>Agent</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L27-L29">ارجا به کد</a></p>
+<li><p style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto">بلاک عامل یا <code>Agent</code> - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L27-L29">ارجا به کد</a></p>
 <ul>
 <li>نام عامل</li>
 <li>آدرس عامل - به صورت مپ - <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/ef5cacc7195d3e785e2cff083abca73b083cd1a4/src/Voting.sol#L35">ارجا به کد</a></li>
