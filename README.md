@@ -5,7 +5,7 @@
 - [قرارداد هوشمند](https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/main/src/Voting.sol)
 - [ژوپیتر نوت‌بوک](https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/main/src/main.ipynb)
 
-نکته: برای مشاهده‌ی گزارش‌کار (ژوپیتر نوت‌بوک) بهتر است از لینک اول یعنی نسخه‌ی HTML استفاده کنید چرا که فونت‌ها در این نسخه به درستی نمایش داده می‌شوند.
+نکته: برای مشاهده‌ی گزارش‌کار (ژوپیتر نوت‌بوک) بهتر است از لینک اول یعنی نسخه‌ی وب استفاده کنید چرا که فونت‌ها در این نسخه به درستی نمایش داده می‌شوند.
 
 ## ‌فهرست مطالب
 - [۱. چکیده](https://ahbanavi.github.io/blockchain-fuzzy-voting/#TOC1)
