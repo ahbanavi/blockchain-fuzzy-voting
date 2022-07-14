@@ -14634,9 +14634,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <ul>
 <li><a href="#TOC3.1">۳.۱. قرارداد هوشمند</a></li>
 <li><a href="#TOC3.2">۳.۲. سیستم فازی</a></li>
-<li><a href="#TOC3.3">۳.۳. وب ۳ - اتصال کانترکت به سیستم فازی</a></li>
+<ul>
+<li><a href="#TOC3.2.1">۳.۲.۱. ورودی‌ها</a></li>
+<li><a href="#TOC3.2.2">۳.۲.۲. خروجی</a></li>
+<li><a href="#TOC3.2.3">۳.۲.۳. قوانین</a></li>
 </ul>
-<li><a href="#TOC3">۴. نتایج</a></li>
+<li><a href="#TOC3.3">۳.۳. وب ۳ - اتصال قرارداد هوشمند به سیستم فازی</a></li>
+</ul>
+<li><a href="#TOC4">۴. نتایج</a></li>
 </ul>
 </span>
 </div>
@@ -14653,7 +14658,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <h2 style="font-size: 24px !important; font-weight: 700" id="TOC1">۱. چکیده</h2>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-دنیای امروز همواره دارد به سمت یک محیط به هم پیوسته مهاجرت می‌کند و در این دنیا، نیاز به سیستم‌های توزیع شده بسیار مهم شده است. اکثر سیستم‌های توزیع شده به دلیل اینکه برای تصمیم‌گیری متکی به یک سیستم مرکزی هستند دارای مشکلاتی همچون single point of failure می‌باشند. همچنین کمبود امنیت اطلاعات و شفاف نبودن فرایند تصمیم‌گیری در این سیستم‌های مدیریتی متمرکز باعث شده است رویکرد‌های تصمیم‌گیری توزیع شده و غیرمتمرکز بر روی بلاکچین مورد استفاده قرار گیرند. در این پیاده‌سازی سعی شده است یک قرارداد هوشمند رای‌گیری بر روی بلاکچین اتریوم نوشته شده و در فرایند اولویت دهی تصمیمات از منطق فازی برای پوشش عدم قطعیت‌ها استفاده گردد.
+دنیای امروز همواره دارد به سمت یک محیط به هم پیوسته مهاجرت می‌کند و در این دنیا، نیاز به سیستم‌های توزیع شده بسیار مهم شده است. اکثر سیستم‌های توزیع شده به دلیل اینکه برای تصمیم‌گیری متکی به یک سیستم مرکزی هستند دارای مشکلاتی همچون single point of failure می‌باشند. همچنین کمبود امنیت اطلاعات و شفاف نبودن فرایند تصمیم‌گیری در این سیستم‌های مدیریتی متمرکز باعث شده است رویکرد‌های تصمیم‌گیری توزیع شده و غیرمتمرکز بر روی بلاکچین مورد استفاده قرار گیرند. در این پیاده‌سازی سعی شده است یک قرارداد هوشمند رای‌گیری بر روی بلاکچین اتریوم نوشته شده و در فرایند رای‌گیری و اولویت دهی تصمیمات از منطق فازی برای پوشش عدم قطعیت‌ها استفاده گردد.
 </p>
 </div>
 </div>
@@ -14669,11 +14674,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <h2 style="font-size: 24px !important; font-weight: 700" id="TOC2">۲. مقدمه</h2>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-این پیاده سازی به دو بخش کلی تقسیم می‌گردد: <br />
-بخش اول: ابتدا باید قرارداد هوشمند رای گیری نوشته شود، برای نوشتن قرار داد هوشمند از زبان <a href="https://docs.soliditylang.org/en/v0.8.15/">Solidity</a> نسخه‌ی 0.8.15 استفاده شده است. <br />
-بخش دوم: در این بخش برای پیاده‌سازی منطق فازی از زبان پایتون استفاده شده است. در اینجا با استفاده از کتاب‌خانه‌ی <a href="https://pythonhosted.org/scikit-fuzzy/">SciKit-Fuzzy</a> یک موتور استنتاج ممدانی نوشته شده و بر اساس آن تصمیمات اولویت بندی می‌گردند. <br />
-ورودی‌های این سیستم باید از روی بلاکچین و از طریق قرارداد هوشمند گرفته شود، برای این کار از کتاب‌خانه‌ی <a href="https://web3py.readthedocs.io/en/stable/">Web3.py</a> استفاده شده و اطلاعات به صورت مستقیم از قرارداد هوشمندی که در بخش اول پیاده‌سازی شده است گرفته می‌شود.
-</p>
+بیشتر سیستم‌های تصمیم‌گیری امروزه، نیاز به یک سیستم مدیریتی مرکزی دارند و تصمیم‌گیری ها عموما بر عهده‌ی یک موجودیت واحد و متمرکز است. این رویکرد مشکلاتی را مانند خرابی سایت متمرکز، سر بار اضافی، فساد پذیری موجودیت متمرکز در روند تصمیم‌گیری و همچنین امنیت پایین اطلاعات را دارد. قدم اول برای حل این مشکلات این است که فرآیند تصمیم‌گیری را به جای یک موجودیت واحد، بر عهده‌ی چندین عامل تصمیم‌گیرنده (Decision Agent) گذاشت و تصمیم اصلی را از طریق رای‌گیری میان این عوامل دریافت کرد. برای این‌که این سیستم مشکلاتی مانند SPOF، فساد پذیری و امنیت را نداشته باشد، می‌توان آن را بر روی یک بلاکچین BFT (Byzantine Fault Tolerance)، مانند اتریوم، پیاده سازی کرد. بلاکچین اتریوم از مفهومی به نام قرارداد‌های هوشمند برای پیاده‌سازی کاربرد‌های مختلف استفاده می‌کند، در این گزارش، از این مفاهیم استفاده و یک قرارداد هوشمند رای‌گیری پیاده سازی شده است.<br />
+ما نمی‌توانیم از رای‌گیری صحبت کرده و از عدم قطعیت‌ها در سیستم‌های رای‌گیری صحبت نکنیم، برای پوشش این عدم قطعیت‌ها یک سیستم فازی ممدانی پیاده‌سازی کرده و بر اساس آن از روی ورودی‌های ثبت شده در بلاکچین توسط عوامل تصمیم‌گیرنده، به هر تصمیم یک امتیاز اولویت می‌دهیم.<br />
+در این گزارش سعی شده است با پیاده‌سازی یک سیستم تصمیم‌گیری غیرمتمرکز بر روی بلاکچین بر مشکلات مربوط به مدیریت متمرکز غلبه کرد و همچنین با ترکیب این سیستم با منطق فازی، عدم قطعیت‌ها را پوشش داد.</p>
 </div>
 </div>
 </div>
@@ -14687,7 +14690,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <h2 style="font-size: 24px !important; font-weight: 700" id="TOC3">۳. پیاده‌سازی</h2>
+<p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
+این پیاده سازی به سه بخش کلی تقسیم می‌گردد: <br />
+بخش اول: ابتدا باید قرارداد هوشمند رای گیری نوشته شود، برای نوشتن قرار داد هوشمند از زبان <a href="https://docs.soliditylang.org/en/v0.8.15/">Solidity</a> نسخه‌ی 0.8.15 استفاده شده است. <br />
+بخش دوم: در این بخش برای پیاده‌سازی منطق فازی از زبان پایتون استفاده شده است. در اینجا با استفاده از کتاب‌خانه‌ی <a href="https://pythonhosted.org/scikit-fuzzy/">SciKit-Fuzzy</a> یک موتور استنتاج ممدانی نوشته شده و بر اساس آن تصمیمات اولویت بندی می‌گردند. <br />
+بخش سوم: ورودی‌های این سیستم باید از روی بلاکچین و از طریق قرارداد هوشمند گرفته شود، برای این کار از کتاب‌خانه‌ی <a href="https://web3py.readthedocs.io/en/stable/">Web3.py</a> استفاده شده و اطلاعات به صورت مستقیم از قرارداد هوشمندی که در بخش اول پیاده‌سازی شده است گرفته شده، و به عنوان ورودی به سیستم فازی پیاده‌سازی شده در بخش دوم داده می‌شود.
+</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <h3 style="font-size: 22px !important; font-weight: 600" id="TOC3.1">۳.۱. قرارداد هوشمند</h3>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
@@ -14696,7 +14715,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </p>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 قرارداد هوشمند به زبان سالیدیتی نوشته شده و در فایل <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/main/src/Voting.sol">Voting.sol</a> ذخیره شده است.<br />
-به دلیل اینکه توجه اصلی این پیاده‌سازی بر روی سیستم فازی است، از توضیح جزئیات پیاده‌سازی این قرارداد چشم پوشی شده است، اما به طور کلی این قرارداد شامل ویژگی‌های زیر می‌باشد:
+به دلیل طولانی بودن کد قرارداد، از اضافه کردن آن به این گزارش چشم پوشی شده است، برای مشاهده‌ی کد این قرار داد به صورت کامل، <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/main/src/Voting.sol">اینجا</a> را کلیک کنید.<br />
+اما به طور کلی این قرارداد شامل ویژگی‌های زیر می‌باشد:
 </p>
 
 <span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
@@ -14792,10 +14812,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
+<h4 style="font-size: 20px !important; font-weight: 600" id="TOC3.2.1">۳.۲.۱. ورودی‌ها</h4>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 سپس باید ورودی‌های سیستم فازی را تعیین کنیم<br />
-سیستم‌ما به تعداد عوامل تصمیم‌گیرنده، متغیر زبانی دارد. در این سیستم، هر چه جایگاه عامل بالاتر باشد، رای آن تاثیر بیشتری بر روی خروجی دارد.<br />
-مثلا اگر سیستم ۳ عامل داشته باشد، ما سه ورودی و متغیر زبانی زیر را داریم:<br />
+سیستم ما به تعداد عوامل تصمیم‌گیرنده، متغیر دارد. در این سیستم، هر چه جایگاه عامل بالاتر باشد، رای آن تاثیر بیشتری بر روی خروجی دارد.<br />
+مثلا اگر سیستم ۳ عامل داشته باشد، ما سه ورودی و متغیر زیر را داریم:<br />
 </p>
 <span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
 <ul>
@@ -14817,7 +14838,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </span>
 <br />
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-قطعه کد زیر، به صورت پویا به تعداد عوامل ورودی‌ها با مقادیر زبانی مشخص ایجاد می‌کند:<br />
+قطعه کد زیر، به صورت پویا بر اساس تعداد عوامل تصمیم‌گیرنده در سیستم، ورودی‌ها را با مقادیر زبانی مشخص ایجاد می‌کند:<br />
 توابع و نمودار تعلق در کد و خروجی قابل مشاهده است.
 </p>
 </div>
@@ -14887,8 +14908,8 @@ jp-needs-light-background
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
+<h4 style="font-size: 20px !important; font-weight: 600" id="TOC3.2.2">۳.۲.۲. خروجی</h4>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-خروجی سیستم:<br />
 خروجی سیستم، میزان اولویت تصمیم می‌باشد. این میزان بین -1 و 1 بوده و به صورت زیر تعریف می‌گردد:
 </p>
 <span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
@@ -14961,8 +14982,8 @@ jp-needs-light-background
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
+<h4 style="font-size: 20px !important; font-weight: 600" id="TOC3.2.3">۳.۲.۳. قوانین</h4>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-قوانین سیستم:<br />
 این سیستم دارای ۳ ورودی است که هر ورودی ۳ مقدار زبانی دارد، در نتیجه تعداد قوانین سیستم ۲۷ می‌باشد.<br />
 قوانین سیستم به صورت زیر است:<br />
 </p>
@@ -15117,9 +15138,9 @@ jp-needs-light-background
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h3 style="font-size: 22px !important; font-weight: 600" id="TOC3.3">۳.۳. وب ۳ - اتصال کانترکت به سیستم فازی</h3>
+<h3 style="font-size: 22px !important; font-weight: 600" id="TOC3.3">۳.۳. وب ۳ - اتصال قرارداد هوشمند به سیستم فازی</h3>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-در این مرحله با استفاده از کتاب‌خانه‌ی <a href="https://web3py.readthedocs.io/en/stable/">Web3.py</a> ما کانترکت را بر روی شبکه‌ دیپلوی کرده و با آن ارتباط برقرار می‌کنیم.<br />
+در این مرحله با استفاده از کتاب‌خانه‌ی <a href="https://web3py.readthedocs.io/en/stable/">Web3.py</a> ما قرارداد هوشمند را بر روی شبکه‌ دیپلوی کرده و با آن ارتباط برقرار می‌کنیم.<br />
 </p>
 </div>
 </div>
@@ -15196,7 +15217,7 @@ jp-needs-light-background
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ganache-cli
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ganache</span><span class="o">-</span><span class="n">cli</span>
 </pre></div>
 
      </div>
@@ -15340,7 +15361,7 @@ Listening on 127.0.0.1:8545
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-همچنین برای تعامل با کانترکت، ما به سه عامل نیاز داریم که این سه Agent را از طریق زیر از شبکه دریافت می‌کنیم:<br />
+همچنین برای تعامل با قرارداد هوشمند، ما به سه عامل نیاز داریم که این سه Agent را از طریق زیر از شبکه دریافت می‌کنیم:<br />
 </p>
 </div>
 </div>
@@ -15396,8 +15417,8 @@ Listening on 127.0.0.1:8545
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-به جهت اینکه فرآیند دیپلوی کردن بر روی شبکه از طریق کد طولانی و توضیح آن خارج از بحث اصلی است، کانترکت را در این مرحله با استفاده از <a href="https://remix.ethereum.org/">Remix - Ethereum IDE</a> دیپلوی کرده و آدرس آن را در کد وارد می‌کنیم.<br />
-همچنین برای تعامل با کانترکت ما به <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABI</a> نیز نیاز داریم که از طریق کامپایلر آن را ایجاد و در کد بارگزاری می‌کنیم.<br />
+به جهت اینکه فرآیند دیپلوی کردن بر روی شبکه از طریق کد طولانی و توضیح آن خارج از بحث اصلی است، قرارداد هوشمند را در این مرحله با استفاده از <a href="https://remix.ethereum.org/">Remix - Ethereum IDE</a> دیپلوی کرده و آدرس آن را در کد وارد می‌کنیم.<br />
+همچنین برای تعامل با قرارداد هوشمند ما به <a href="https://en.wikipedia.org/wiki/Application_binary_interface">ABI</a> نیز نیاز داریم که از طریق کامپایلر آن را ایجاد و در کد بارگزاری می‌کنیم.<br />
 </p>
 </div>
 </div>
@@ -15411,7 +15432,7 @@ Listening on 127.0.0.1:8545
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>solc Voting.sol --abi -o build --overwrite
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">solc</span> <span class="n">Voting</span><span class="o">.</span><span class="n">sol</span> <span class="o">--</span><span class="n">abi</span> <span class="o">-</span><span class="n">o</span> <span class="n">build</span> <span class="o">--</span><span class="n">overwrite</span>
 </pre></div>
 
      </div>
@@ -15498,9 +15519,9 @@ Listening on 127.0.0.1:8545
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-همانطور که از خروجی بالا پیداست، کانترکت در کد ما لود شده و ما توانستیم نام اولین عامل را <code>First Agent</code> از آن دریافت کنیم.<br />
-اولین Agent هنگام دیپلوی کردن کانترکت بر روی شبکه ایجاد می‌گردد.<br />
-در نتیجه ما به ۲ عامل دیگر نیاز داریم که از طریق تابع <code>registerAgent</code> به کانترکت اضافه می‌شوند:<br />
+همانطور که از خروجی بالا پیداست، قرارداد هوشمند در کد ما لود شده و ما توانستیم نام اولین عامل را <code>First Agent</code> از آن دریافت کنیم.<br />
+اولین Agent هنگام دیپلوی کردن قرارداد هوشمند بر روی شبکه ایجاد می‌گردد.<br />
+در نتیجه ما به ۲ عامل دیگر نیاز داریم که از طریق تابع <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/b4840e3457084883dbbbead1d0bf1baf3befd093/src/Voting.sol#L119-L129"><code>registerAgent</code></a> به قرارداد هوشمند اضافه می‌شوند:<br />
 </p>
 </div>
 </div>
@@ -15746,7 +15767,7 @@ Agent 2 votes for decision 6 with vote 45
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
-در این مرحله ما بایستی آرای مرحله‌ی قبل را از کانترکت بر روی بلاکچین دریافت کنیم:
+در این مرحله ما بایستی آرای مرحله‌ی قبل را از قرارداد هوشمند بر روی بلاکچین دریافت کنیم:
 </p>
 </div>
 </div>
@@ -15887,13 +15908,13 @@ jp-needs-light-background
 <h2 style="font-size: 22px !important; font-weight: 600" id="TOC4">۴. نتایج</h2>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 به منظور مشاهده‌ی نتایج بیشتر، مراحل قبل را در یک تابع خلاصه می‌کنیم:<br />
-این مراحل گام‌های زیر است:<br />
+این مراحل شامل گام‌های زیر است:<br />
 </p>
 <span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
 <ul>
 <li>ایجاد یک تصمیم</li>
-<li>دادن رای رندم به تصمیم توسط هر یک از عوامل</li>
-<li>دریافت آرا از کانترکت بر روی بلاکچین</li>
+<li>دادن رای تصادفی به تصمیم توسط هر یک از عوامل</li>
+<li>دریافت آرا از قرارداد هوشمند بر روی بلاکچین</li>
 <li>دادن آرا به سیستم فازی و مشاهده‌ی نتایج</li>
 </ul>
 </span>
