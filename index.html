@@ -14625,7 +14625,33 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h2 style="font-size: 24px !important; font-weight: 700">چکیده</h2>
+<h2 style="font-size: 24px !important; font-weight: 700">فهرست مطالب</h2>
+<span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
+<ul>
+<li><a href="#TOC1">۱. چکیده</a></li>
+<li><a href="#TOC2">۲. مقدمه</a></li>
+<li><a href="#TOC3">۳. پیاده‌سازی</a></li>
+<ul>
+<li><a href="#TOC3.1">۳.۱. قرارداد هوشمند</a></li>
+<li><a href="#TOC3.2">۳.۲. سیستم فازی</a></li>
+<li><a href="#TOC3.3">۳.۳. وب ۳ - اتصال کانترکت به سیستم فازی</a></li>
+</ul>
+<li><a href="#TOC3">۴. نتایج</a></li>
+</ul>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
+<h2 style="font-size: 24px !important; font-weight: 700" id="TOC1">۱. چکیده</h2>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 دنیای امروز همواره دارد به سمت یک محیط به هم پیوسته مهاجرت می‌کند و در این دنیا، نیاز به سیستم‌های توزیع شده بسیار مهم شده است. اکثر سیستم‌های توزیع شده به دلیل اینکه برای تصمیم‌گیری متکی به یک سیستم مرکزی هستند دارای مشکلاتی همچون single point of failure می‌باشند. همچنین کمبود امنیت اطلاعات و شفاف نبودن فرایند تصمیم‌گیری در این سیستم‌های مدیریتی متمرکز باعث شده است رویکرد‌های تصمیم‌گیری توزیع شده و غیرمتمرکز بر روی بلاکچین مورد استفاده قرار گیرند. در این پیاده‌سازی سعی شده است یک قرارداد هوشمند رای‌گیری بر روی بلاکچین اتریوم نوشته شده و در فرایند اولویت دهی تصمیمات از منطق فازی برای پوشش عدم قطعیت‌ها استفاده گردد.
 </p>
@@ -14641,7 +14667,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h2 style="font-size: 24px !important; font-weight: 700">مقدمه</h2>
+<h2 style="font-size: 24px !important; font-weight: 700" id="TOC2">۲. مقدمه</h2>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 این پیاده سازی به دو بخش کلی تقسیم می‌گردد: <br />
 بخش اول: ابتدا باید قرارداد هوشمند رای گیری نوشته شود، برای نوشتن قرار داد هوشمند از زبان <a href="https://docs.soliditylang.org/en/v0.8.15/">Solidity</a> نسخه‌ی 0.8.15 استفاده شده است. <br />
@@ -14660,13 +14686,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h2 style="font-size: 24px !important; font-weight: 700">پیاده‌سازی</h2>
+<h2 style="font-size: 24px !important; font-weight: 700" id="TOC3">۳. پیاده‌سازی</h2>
 </div>
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h3 style="font-size: 22px !important; font-weight: 600">قرارداد هوشمند</h3>
+<h3 style="font-size: 22px !important; font-weight: 600" id="TOC3.1">۳.۱. قرارداد هوشمند</h3>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 قرارداد هوشمند سیستم رای‌گیری بر اساس بلاک‌های معرفی شده در مقاله‌ی پایه پیاده‌سازی شده است:<br />
-<center><a href="https://raw.githubusercontent.com/ahbanavi/blockchain-fuzzy-voting/main/src/storage/1-small.png"><img src='https://raw.githubusercontent.com/ahbanavi/blockchain-fuzzy-voting/main/src/storage/1-small.png' /></a></center><br />
+<center><a href="https://raw.githubusercontent.com/ahbanavi/blockchain-fuzzy-voting/main/src/storage/1.png"><img src='https://raw.githubusercontent.com/ahbanavi/blockchain-fuzzy-voting/main/src/storage/1-small.png' /></a></center><br />
 </p>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 قرارداد هوشمند به زبان سالیدیتی نوشته شده و در فایل <a href="https://github.com/ahbanavi/blockchain-fuzzy-voting/blob/main/src/Voting.sol">Voting.sol</a> ذخیره شده است.<br />
@@ -14725,7 +14751,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h3 style="font-size: 22px !important; font-weight: 600">سیستم فازی</h3>
+<h3 style="font-size: 22px !important; font-weight: 600" id="TOC3.2">۳.۲. سیستم فازی</h3>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 برای پیاده‌سازی سیستم فازی، از کتاب‌خانه‌ی <a href="https://pythonhosted.org/scikit-fuzzy/">SciKit-Fuzzy</a> استفاده شده است.<br />
 مراحل کار به‌صورت زیر است:<br />
@@ -14770,20 +14796,29 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 سپس باید ورودی‌های سیستم فازی را تعیین کنیم<br />
 سیستم‌ما به تعداد عوامل تصمیم‌گیرنده، متغیر زبانی دارد. در این سیستم، هر چه جایگاه عامل بالاتر باشد، رای آن تاثیر بیشتری بر روی خروجی دارد.<br />
 مثلا اگر سیستم ۳ عامل داشته باشد، ما سه ورودی و متغیر زبانی زیر را داریم:<br />
+</p>
+<span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
 <ul>
 <li>ورودی اول: رای عامل ۱ - دارای بیشترین تاثیر</li>
 <li>ورودی دوم: رای عامل ۲ - تاثیر متوسط</li>
 <li>ورودی سوم: رای عامل ۳ - کمترین تاثیر</li>
 </ul>
+</span>
 <br />
+<p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 مقادیر زبانی تمامی ورودی‌ها به صورت زیر است:<br />
+</p>
+<span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
 <ul>
 <li>رای منفی</li>
 <li>رای ممتنع</li>
 <li>رای مثبت</li>
 </ul>
+</span>
 <br />
+<p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 قطعه کد زیر، به صورت پویا به تعداد عوامل ورودی‌ها با مقادیر زبانی مشخص ایجاد می‌کند:<br />
+توابع و نمودار تعلق در کد و خروجی قابل مشاهده است.
 </p>
 </div>
 </div>
@@ -14855,12 +14890,14 @@ jp-needs-light-background
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 خروجی سیستم:<br />
 خروجی سیستم، میزان اولویت تصمیم می‌باشد. این میزان بین -1 و 1 بوده و به صورت زیر تعریف می‌گردد:
+</p>
+<span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
 <ul>
 <li>اولویت پایین</li>
 <li>اولویت متوسط</li>
 <li>اولویت بالا</li>
 </ul>
-</p>
+</span>
 </div>
 </div>
 </div>
@@ -15080,7 +15117,7 @@ jp-needs-light-background
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
-<h3 style="font-size: 22px !important; font-weight: 600">وب ۳ - اتصال کانترکت به سیستم فازی</h3>
+<h3 style="font-size: 22px !important; font-weight: 600" id="TOC3.3">۳.۳. وب ۳ - اتصال کانترکت به سیستم فازی</h3>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 در این مرحله با استفاده از کتاب‌خانه‌ی <a href="https://web3py.readthedocs.io/en/stable/">Web3.py</a> ما کانترکت را بر روی شبکه‌ دیپلوی کرده و با آن ارتباط برقرار می‌کنیم.<br />
 </p>
@@ -15847,16 +15884,19 @@ jp-needs-light-background
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div dir='rtl' style="font-family: 'Vazirmatn', sans-serif;">
+<h2 style="font-size: 22px !important; font-weight: 600" id="TOC4">۴. نتایج</h2>
 <p style="font-size: 18px !important; text-align: right; font-weight: 400; text-justify: auto">
 به منظور مشاهده‌ی نتایج بیشتر، مراحل قبل را در یک تابع خلاصه می‌کنیم:<br />
 این مراحل گام‌های زیر است:<br />
+</p>
+<span style="font-size: 18px !important; text-align: right !important; font-weight: 400; text-justify: auto" dir='rtl'>
 <ul>
 <li>ایجاد یک تصمیم</li>
 <li>دادن رای رندم به تصمیم توسط هر یک از عوامل</li>
 <li>دریافت آرا از کانترکت بر روی بلاکچین</li>
 <li>دادن آرا به سیستم فازی و مشاهده‌ی نتایج</li>
 </ul>
-</p>
+</span>
 </div>
 </div>
 </div>
